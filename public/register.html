@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create your account</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .register-container {
+      background: #fff;
+      width: 100%;
+      max-width: 420px;
+      padding: 40px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .register-container h2 {
+      font-weight: 400;
+      margin-bottom: 20px;
+      font-size: 24px;
+      text-align: center;
+      color: #202124;
+    }
+
+    .register-container input {
+      width: 100%;
+      padding: 12px 10px;
+      margin-bottom: 18px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .register-container button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .register-container button:hover {
+      background-color: #155ab6;
+    }
+
+    .google-logo {
+      display: block;
+      margin: 0 auto 20px;
+      width: 75px;
+    }
+
+    .footer-text {
+      font-size: 13px;
+      text-align: center;
+      color: #777;
+      margin-top: 20px;
+    }
+
+    .small-link {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .small-link a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    .small-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <img src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="google-logo" alt="User Icon">
+    <h2>Create your account</h2>
+    <form id="registerForm">
+      <input type="text" placeholder="Full name" id="name" required>
+      <input type="email" placeholder="Email address" id="email" required>
+      <input type="password" placeholder="Create password" id="password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <div class="small-link">Already have an account? <a href="/login.html">Sign in</a></div>
+  </div>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const res = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name.value,
+          email: email.value,
+          password: password.value
+        })
+      });
+      const data = await res.json();
+      alert(data.message);
+      if (res.ok) window.location.href = '/login.html';
+    });
+  </script>
+</body>
+</html>

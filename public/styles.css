@@ -1,0 +1,105 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+label, select, button {
+  font-size: 16px;
+}
+
+select {
+  padding: 6px 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#chatContainer {
+  max-width: 600px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#chatBox {
+  height: 300px;
+  overflow-y: scroll;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f1f1f1;
+  margin-bottom: 10px;
+}
+
+#chatBox div {
+  background: white;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+#chatBox img {
+  margin-top: 5px;
+  border-radius: 5px;
+  max-width: 100%;
+}
+
+#messageForm {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#messageInput {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#imageInput {
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  #messageForm {
+    flex-direction: column;
+  }
+
+  #messageInput {
+    width: 100%;
+  }
+
+  #imageInput, button {
+    width: 100%;
+  }
+}

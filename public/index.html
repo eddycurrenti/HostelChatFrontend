@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hostel Chat App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      padding: 0;
+      margin: 0;
+      background: #f2f4f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 40px 30px;
+      max-width: 700px;
+      width: 100%;
+      border-radius: 40px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .auth-links {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .auth-links a {
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+      font-size: 16px;
+    }
+
+    .auth-links a:hover {
+      text-decoration: underline;
+    }
+
+    .rules-box {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 25px 20px;
+      border-radius: 10px;
+    }
+
+    .rules-box h2 {
+      margin-top: 0;
+      color: #333;
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .rules-box ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .rules-box li {
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .rules-box li::before {
+      content: "✔️";
+      margin-right: 10px;
+      color: #2ecc71;
+    }
+
+    .rules-box li.important::before {
+      content: "⚠️";
+      color: #e67e22;
+    }
+
+    .rules-box li.danger::before {
+      content: "⛔";
+      color: #e74c3c;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 30px 20px;
+      }
+
+      .rules-box h2 {
+        font-size: 20px;
+      }
+
+      .rules-box li {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hostel Public Chat Room</h1>
+    <div class="auth-links">
+      <a href="/login.html">Login</a> |
+      <a href="/register.html">Register</a>
+    </div>
+
+    <div class="rules-box">
+      <h2>Chat Room Rules</h2>
+      <ul>
+        <li>Be respectful and polite to all users.</li>
+        <li class="danger">Do not use offensive or abusive language.</li>
+        <li class="important">No spamming or flooding the chat.</li>
+        <li>Only share appropriate and relevant content.</li>
+        <li class="important">Do not share personal or sensitive information.</li>
+        <li class="danger">No advertisements, promotions, or unrelated links.</li>
+        <li class="danger">Violations may result in a permanent ban.</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
